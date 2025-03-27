@@ -1,6 +1,6 @@
 
 
-# ![Ohmyfood!](starterOnly/Logo.png)
+# ![GameOn](assets/images/Logo.png)
 Ce dépôt correspond au Projet 4 de la formation Javascript React d'Openclassrooms.
 
 Il s'agit d'un site de réservation à un marathon national de jeux vidéos'
