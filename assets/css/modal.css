@@ -26,7 +26,14 @@
 
 .modal-body {
     padding: 15px 8%;
-    margin: 15px auto
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .close {
@@ -59,7 +66,9 @@
 }
 
 .button {
-    margin-top: .5em;
+    margin-top: 1.2em;
+    align-self: center;
+    width: 40%;
 }
 
 .button:hover {
@@ -68,20 +77,18 @@
 
 label {
     font-family: var(--font-default);
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 400;
     display: inline-block;
-    margin-bottom: 11px
+    margin-bottom: 8px
 }
 
 input {
-    padding: 8px;
     border: .8px solid #ccc;
-    outline: 0
+    outline: 0;
 }
 
 .text-control {
-    margin: 0;
     padding: 8px;
     width: 100%;
     border-radius: 8px;
@@ -89,14 +96,18 @@ input {
     height: 48px
 }
 
+.formData {
+    margin-bottom: 18px;
+}
+
 .formData[data-error]::after {
     content: attr(data-error);
-    font-size: .4em;
+    font-size: 10px;
     color: #ff4e60;
     display: block;
     margin-top: 7px;
     margin-bottom: 7px;
-    text-align: right;
+    text-align: left;
     line-height: .3;
     opacity: 0;
     transition: .3s
@@ -112,6 +123,7 @@ input {
 
 .checkbox-label,
 .checkbox2-label {
+    font-family: var(--font-secondary);
     position: relative;
     margin-left: 36px;
     font-size: 12px;
@@ -123,7 +135,7 @@ input {
     display: block;
     width: 20px;
     height: 20px;
-    border: 2px solid #279e7a;
+    border: 1px solid #c4c4c4;
     border-radius: 50%;
     text-indent: 29px;
     white-space: nowrap;
@@ -185,7 +197,8 @@ input {
 
 .text-label {
     font-weight: 400;
-    font-size: 16px
+    font-size: 14px;
+    margin-bottom: 6px;
 }
 
 
