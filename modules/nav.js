@@ -6,3 +6,4 @@ export function editNav() {
     nav.className = "topnav";
   }
 }
+
