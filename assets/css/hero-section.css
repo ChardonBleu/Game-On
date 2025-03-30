@@ -11,7 +11,8 @@
     flex-direction: column;
     justify-content: space-around;
     width: 40%;
-    padding-left: 40px;
+    padding-left: 70px;
+    padding-bottom: 20px;
     background: #232323;
     color: #fff;
     border-top-left-radius: 10px;
@@ -21,23 +22,21 @@
 
 .hero-headline {
     font-size: 6rem;
-    font-weight: normal;
     white-space: nowrap;
     z-index: 1;
 }
 
 .hero-text {
-
-    font-weight: normal;
+    font-size: 1.5rem;
     padding: 0;
-    width: 80%
+    width: 80%;
 }
 
 .modal-btn {
     color: white;
     text-transform: capitalize;
-    font-size: 1.3rem;
-    width: 50%
+    font-size: 1.563rem;
+    width: 200px;
 }
 
 .modal-btn:hover {
@@ -82,12 +81,13 @@
     }
 
     .hero-headline {
-        font-size: 4.5rem;
-        white-space: normal;
+        font-size: 4rem;
+        white-space: wrap;
     }
 
     .hero-text {
-        font-size: 1.5rem;
+        font-family: var(--dm-sans-regular);
+        font-size: 1.2rem;
         margin-top: 40px;
     }
 
@@ -105,15 +105,26 @@
         align-self: center;
         margin-top: 80px;
     }
+
+    .modal-btn {
+        font-size: 1.2rem;
+        width: auto;
+        padding: 10px 40px;
+    }
 }
 
 @media screen and (max-width: 540px) {
     .hero-headline {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .hero-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 20px;
+    }
+
+    .modal-btn {
+        font-size: 0.9rem;
+        padding: 10px 35px;
     }
 }

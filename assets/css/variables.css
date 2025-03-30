@@ -1,9 +1,36 @@
-@import url('https://fonts.cdnfonts.com/css/roboto');
-@import url('https://fonts.cdnfonts.com/css/dm-sans');
+@font-face {
+    font-family: "DMSans-Regular";
+    src: url('../fonts/DMSans-Regular.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "DMSans-Medium";
+    src: url('../fonts/DMSans-Regular.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 500;
+}
 
 :root {
-    --font-default: "DM Sans", Arial, Helvetica, sans-serif;
-    --font-secondary: "Roboto", Arial, Helvetica, sans-serif;
+    --dm-sans-regular: "DMSans-Regular", Arial, Helvetica, sans-serif ;
+    --dm-sans-medium: "DMSans-Medium", Arial, Helvetica, sans-serif ;
+    --roboto-regular: "Roboto-Regular", Arial, Helvetica, sans-serif;
+    --roboto-medium: "Roboto-Medium", Arial, Helvetica, sans-serif;
     --modal-duration: 0.8s;
     --primary-red: #FF001B;
     --dark-grey: #232323;

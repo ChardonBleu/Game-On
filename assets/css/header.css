@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    font-family: Roboto, sans-serif;
+    font-family: var(--roboto-medium);
 }
 
 .main-navbar .icon {
@@ -33,7 +33,7 @@
         align-items: flex-start;
     }
 
-    .main-navbar a {
+    .main-navbar a, .icon {
         display: none;
         margin: 5px;
         font-size: 18px;
