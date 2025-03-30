@@ -8,8 +8,8 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    font-family: var(--font-default);
-    font-size: 18px;
+    font-family: var(--dm-sans-medium);
+    font-size: 16px;
     max-width: 1600px;
     margin: auto;
 }

@@ -1,10 +1,12 @@
 form {
+    font-family: var(--dm-sans-regular);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .button {
+    font-family: var(--dm-sans-medium);
     margin-top: 1.2em;
     align-self: center;
     width: 40%;
@@ -15,9 +17,7 @@ form {
 }
 
 label {
-    font-family: var(--font-default);
     font-size: 14px;
-    font-weight: 400;
     display: inline-block;
     margin-bottom: 8px
 }
@@ -41,6 +41,7 @@ input {
 
 .formData[data-error]::after {
     content: attr(data-error);
+    font-family:var(--roboto-regular);
     font-size: 10px;
     color: #ff4e60;
     display: block;
@@ -62,11 +63,10 @@ input {
 
 .checkbox-label,
 .checkbox2-label {
-    font-family: var(--font-secondary);
+    font-family: var(--roboto-regular);
     position: relative;
     margin-left: 36px;
     font-size: 12px;
-    font-weight: 400
 }
 
 .checkbox-label .checkbox-icon,
@@ -134,7 +134,6 @@ input {
 }
 
 .text-label {
-    font-weight: 400;
     font-size: 14px;
     margin-bottom: 6px;
 }
