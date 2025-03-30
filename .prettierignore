@@ -1,0 +1,5 @@
+# Ignore artifacts:
+*.json
+*.md
+*.mjs
+*.html
