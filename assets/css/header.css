@@ -33,7 +33,7 @@
         align-items: flex-start;
     }
 
-    .main-navbar a {
+    .main-navbar a, .icon {
         display: none;
         margin: 5px;
         font-size: 18px;
