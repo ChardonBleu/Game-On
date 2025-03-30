@@ -8,6 +8,8 @@
   },
 
   "scripts": {
-   "lint": "eslint *.js"
+   "lint": "eslint *.js",
+   "fmt": "prettier . --check",
+   "fmt:fix": "prettier . --write"
   }
 }

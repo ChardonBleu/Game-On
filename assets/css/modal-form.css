@@ -1,139 +1,139 @@
 form {
-    font-family: var(--dm-sans-regular);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  font-family: var(--dm-sans-regular);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .button {
-    font-family: var(--dm-sans-medium);
-    margin-top: 1.2em;
-    align-self: center;
-    width: 40%;
+  font-family: var(--dm-sans-medium);
+  margin-top: 1.2em;
+  align-self: center;
+  width: 40%;
 }
 
 .button:hover {
-    background: #3876ac
+  background: #3876ac;
 }
 
 label {
-    font-size: 14px;
-    display: inline-block;
-    margin-bottom: 8px
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 input {
-    border: .8px solid #ccc;
-    outline: 0;
+  border: 0.8px solid #ccc;
+  outline: 0;
 }
 
 .text-control {
-    padding: 8px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 20px;
-    height: 48px
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 48px;
 }
 
 .formData {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 .formData[data-error]::after {
-    content: attr(data-error);
-    font-family:var(--roboto-regular);
-    font-size: 10px;
-    color: #ff4e60;
-    display: block;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    text-align: left;
-    line-height: .3;
-    opacity: 0;
-    transition: .3s
+  content: attr(data-error);
+  font-family: var(--roboto-regular);
+  font-size: 10px;
+  color: #ff4e60;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
 }
 
-.formData[data-error-visible=true]::after {
-    opacity: 1
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
 }
 
-.formData[data-error-visible=true] .text-control {
-    border: 2px solid #ff4e60;
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid #ff4e60;
 }
 
 .checkbox-label,
 .checkbox2-label {
-    font-family: var(--roboto-regular);
-    position: relative;
-    margin-left: 36px;
-    font-size: 12px;
+  font-family: var(--roboto-regular);
+  position: relative;
+  margin-left: 36px;
+  font-size: 12px;
 }
 
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #c4c4c4;
-    border-radius: 50%;
-    text-indent: 29px;
-    white-space: nowrap;
-    position: absolute;
-    left: -30px;
-    top: -1px;
-    transition: .3s
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 50%;
+  text-indent: 29px;
+  white-space: nowrap;
+  position: absolute;
+  left: -30px;
+  top: -1px;
+  transition: 0.3s;
 }
 
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
-    content: "";
-    width: 13px;
-    height: 13px;
-    background-color: #279e7a;
-    border-radius: 50%;
-    text-indent: 29px;
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s;
-    opacity: 0
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: #279e7a;
+  border-radius: 50%;
+  text-indent: 29px;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .checkbox-input {
-    display: none
+  display: none;
 }
 
-.checkbox-input:checked+.checkbox-label .checkbox-icon::after,
-.checkbox-input:checked+.checkbox2-label .checkbox-icon::after {
-    opacity: 1
+.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
+.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
+  opacity: 1;
 }
 
-.checkbox-input:checked+.checkbox2-label .checkbox-icon {
-    background: #279e7a
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+  background: #279e7a;
 }
 
 .checkbox2-label .checkbox-icon {
-    border-radius: 4px;
-    border: 0;
-    background: #c4c4c4
+  border-radius: 4px;
+  border: 0;
+  background: #c4c4c4;
 }
 
 .checkbox2-label .checkbox-icon::after {
-    width: 7px;
-    height: 4px;
-    border-radius: 2px;
-    background: 0 0;
-    border: 2px solid transparent;
-    border-bottom-color: #fff;
-    border-left-color: #fff;
-    transform: rotate(-55deg);
-    left: 21%;
-    top: 19%
+  width: 7px;
+  height: 4px;
+  border-radius: 2px;
+  background: 0 0;
+  border: 2px solid transparent;
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+  transform: rotate(-55deg);
+  left: 21%;
+  top: 19%;
 }
 
 .text-label {
-    font-size: 14px;
-    margin-bottom: 6px;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
