@@ -10,8 +10,12 @@
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.open-modal {
+.display-node {
   display: block;
+}
+
+.mask-node {
+  display: none !important;
 }
 
 .content {
@@ -22,7 +26,7 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  color: #fff;
+  color: white;
   padding-top: 10px;
 }
 
@@ -40,6 +44,7 @@
   padding: 15px 8%;
   margin-top: 15px;
   margin-bottom: 6px;
+  min-height: 710px;
 }
 
 .close {
@@ -60,7 +65,7 @@
   content: " ";
   height: 33px;
   width: 3px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .close:before {
@@ -69,6 +74,21 @@
 
 .close:after {
   transform: rotate(-45deg);
+}
+
+.send-confirmation {
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: white;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-betwween;
+  gap: 250px;
+  padding-top: 250px;
+  align-items: center;
 }
 
 @keyframes modalopen {
