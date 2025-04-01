@@ -1,20 +1,19 @@
-// ****************************  DOM nodes **************************************
-
-const modalbg = document.querySelector(".bground");
-const modalContent = document.querySelector(".content");
+import { modalbg, modalContent, form, confirmation } from "./dom.js";
 
 // ****************************  functions **************************************
 
 /** Launch modal from
  */
 export function launchModal() {
-  modalbg.classList.toggle("open-modal");
+  confirmation.classList.add("mask-node");
+  modalbg.classList.toggle("display-node");
   modalContent.classList.add("open-anim");
 }
 
 /** Close modal from
  */
 export function closeModal() {
+  maskAllErrorMessages();
   modalContent.classList.add("close-anim");
 }
 
@@ -29,6 +28,18 @@ function displayErrorMessage(errorValidation, errorDiv) {
   } else {
     errorDiv.setAttribute("data-error-visible", false);
   }
+}
+
+function maskAllErrorMessages() {
+  const allErrors = document.querySelectorAll(".error");
+  for (const error of allErrors) {
+    error.setAttribute("data-error-visible", false);
+  }
+  const errorRadio = document.querySelector(".error-radio");
+  errorRadio.setAttribute("data-error-visible", false);
+
+  const errorCheckbox = document.querySelector(".error-checkbox");
+  errorCheckbox.setAttribute("data-error-visible", false);
 }
 
 /** Validate modal form for imputs of type text, email, date or number
@@ -73,32 +84,38 @@ function validateCheckboxInput() {
   return validation;
 }
 
-/** Check if form is valid
+/** Send message using fetch.
+ * Default submit is deactivated, so modal keep open.
+ * Sending confirmatiom message is displayed in modal while form is masked
+ */
+async function sendMessage() {
+  const formData = new FormData(form);
+  const searchParams = new URLSearchParams(formData);
+
+  fetch("http://127.0.0.1:5500/index.html?" + searchParams.toString(), {
+    method: "GET",
+  })
+    .then((response) => response.text())
+    .then(() => {
+      form.reset();
+      form.classList.add("mask-node");
+      confirmation.classList.remove("mask-node");
+    })
+    .catch((error) => {
+      console.error("Erreur :", error);
+    });
+}
+
+/** Check if form is valid before sending message
  * @param event {object} - use to prevent sending form if it's not validate
  */
 export function validationForm(event) {
+  event.preventDefault();
   if (
-    !validateCommunInput() |
-    !validateRadioInput() |
-    !validateCheckboxInput()
+    validateCommunInput() &&
+    validateRadioInput() &&
+    validateCheckboxInput()
   ) {
-    event.preventDefault();
-  } else {
-    console.log("formulaire envoyé");
-    // fermer modale (ça se fait tout seul)
-    // et lancer  l'affichage de la modale de confirmation
+    sendMessage(event);
   }
 }
-
-// ****************************  Event Listeners **************************************
-
-modalContent.addEventListener("animationend", () => {
-  const contentClassList = modalContent.classList.value.split(" ");
-
-  if (contentClassList.includes("open-anim")) {
-    modalContent.classList.remove("open-anim");
-  } else if (contentClassList.includes("close-anim")) {
-    modalContent.classList.remove("close-anim");
-    modalbg.classList.toggle("open-modal");
-  }
-});
