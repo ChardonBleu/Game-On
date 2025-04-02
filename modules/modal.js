@@ -92,7 +92,7 @@ async function sendMessage() {
   const formData = new FormData(form);
   const searchParams = new URLSearchParams(formData);
 
-  fetch("http://127.0.0.1:5500/index.html?" + searchParams.toString(), {
+  fetch("https://chardonbleu.github.io/Game-On/index.html?" + searchParams.toString(), {
     method: "GET",
   })
     .then((response) => response.text())
