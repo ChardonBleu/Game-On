@@ -3,3 +3,8 @@ coco.sh
 
 rab.css
 node_modules
+.prettierrc
+package.json
+package-lock.json
+*.mjs
+.prettier*
