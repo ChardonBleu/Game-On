@@ -10,6 +10,20 @@ export function launchModal() {
   modalContent.classList.add("open-anim");
 }
 
+/** mask all error message in div error
+ */
+function maskAllErrorMessages() {
+  const allErrors = document.querySelectorAll(".error");
+  for (const error of allErrors) {
+    error.setAttribute("data-error-visible", false);
+  }
+  const errorRadio = document.querySelector(".error-radio");
+  errorRadio.setAttribute("data-error-visible", false);
+
+  const errorCheckbox = document.querySelector(".error-checkbox");
+  errorCheckbox.setAttribute("data-error-visible", false);
+}
+
 /** Close modal from
  */
 export function closeModal() {
@@ -30,18 +44,6 @@ function displayErrorMessage(errorValidation, errorDiv) {
   }
 }
 
-function maskAllErrorMessages() {
-  const allErrors = document.querySelectorAll(".error");
-  for (const error of allErrors) {
-    error.setAttribute("data-error-visible", false);
-  }
-  const errorRadio = document.querySelector(".error-radio");
-  errorRadio.setAttribute("data-error-visible", false);
-
-  const errorCheckbox = document.querySelector(".error-checkbox");
-  errorCheckbox.setAttribute("data-error-visible", false);
-}
-
 /** Validate modal form for imputs of type text, email, date or number
  * @return {boolean} true if all those imputs are valid
  */
@@ -53,7 +55,7 @@ function validateCommunInput() {
     const input = error.querySelector("input");
     let inputValidation = input.checkValidity() && input.value;
     displayErrorMessage(inputValidation, error);
-    validation |= inputValidation;
+    validation = validation || inputValidation;
   }
   return validation;
 }
@@ -92,7 +94,7 @@ async function sendMessage() {
   const formData = new FormData(form);
   const searchParams = new URLSearchParams(formData);
 
-  fetch("https://chardonbleu.github.io/Game-On/index.html?" + searchParams.toString(), {
+  fetch("" + "/index.html?" + searchParams.toString(), {
     method: "GET",
   })
     .then((response) => response.text())
@@ -102,7 +104,7 @@ async function sendMessage() {
       confirmation.classList.remove("mask-node");
     })
     .catch((error) => {
-      console.error("Erreur :", error);
+      throw new Error("Erreur à l'envoi du message :", error);
     });
 }
 
