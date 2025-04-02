@@ -93,8 +93,12 @@ function validateCheckboxInput() {
 async function sendMessage() {
   const formData = new FormData(form);
   const searchParams = new URLSearchParams(formData);
+  const isProduction = window.location.hostname === "chardonbleu.github.io";
+  const apiUrl = isProduction
+    ? "https://chardonbleu.github.io/Game-On/"
+    : "http://127.0.0.1:5500";
 
-  fetch("" + "/index.html?" + searchParams.toString(), {
+  fetch(apiUrl + "/index.html?" + searchParams.toString(), {
     method: "GET",
   })
     .then((response) => response.text())
