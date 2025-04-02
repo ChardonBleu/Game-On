@@ -1,7 +1,5 @@
 import { modalbg, modalContent, form, confirmation } from "./dom.js";
 
-// ****************************  functions **************************************
-
 /** Launch modal from
  */
 export function launchModal() {
@@ -95,7 +93,7 @@ async function sendMessage() {
   const searchParams = new URLSearchParams(formData);
   const isProduction = window.location.hostname === "chardonbleu.github.io";
   const apiUrl = isProduction
-    ? "https://chardonbleu.github.io/Game-On/"
+    ? "https://chardonbleu.github.io/Game-On"
     : "http://127.0.0.1:5500";
 
   fetch(apiUrl + "/index.html?" + searchParams.toString(), {
