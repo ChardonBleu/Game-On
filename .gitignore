@@ -1,9 +1,7 @@
 coco.sh
 .vscode*
-
 rab.css
 node_modules
-.prettierrc
 package.json
 package-lock.json
 *.mjs
