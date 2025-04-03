@@ -32,8 +32,10 @@
   --roboto-regular: "Roboto-Regular", Arial, Helvetica, sans-serif;
   --roboto-medium: "Roboto-Medium", Arial, Helvetica, sans-serif;
   --modal-duration: 0.8s;
-  --primary-red: #ff001b;
+  --primary-red: #fe142f;
   --dark-grey: #232323;
-  --green: #279e7a;
+  --green-form: #279e7a;
   --error-color: #ff4e60;
+  --blue-btn: #3876ac;
+  --light-grey: #c4c4c4;
 }

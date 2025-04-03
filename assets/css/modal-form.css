@@ -13,7 +13,7 @@ form {
 }
 
 .button:hover {
-  background: #3876ac;
+  background: var(--blue-btn);
 }
 
 label {
@@ -23,7 +23,7 @@ label {
 }
 
 input {
-  border: 0.8px solid #ccc;
+  border: 0.8px solid var(--light-grey);
   outline: 0;
 }
 
@@ -45,7 +45,7 @@ input {
   content: attr(data-error);
   font-family: var(--roboto-regular);
   font-size: 10px;
-  color: #ff4e60;
+  color: var(--error-color);
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
@@ -62,16 +62,16 @@ input {
 }
 
 .error input:invalid {
-  border: 2px solid #ff4e60;
+  border: 2px solid var(--error-color);
 }
 
 .error input:valid {
-  border: 1px solid #279e7a;
+  border: 1px solid var(--green-form);
 }
 
 .error-radio[data-error-visible="true"] .radio-icon,
 .error-checkbox[data-error-visible="true"] .conditions {
-  border: 2px solid #ff4e60;
+  border: 2px solid var(--error-color);
 }
 
 .radio-label,
@@ -88,7 +88,7 @@ input {
   display: block;
   width: 20px;
   height: 20px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid var(--light-grey);
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -103,7 +103,7 @@ input {
   content: "";
   width: 13px;
   height: 13px;
-  background-color: #279e7a;
+  background-color: var(--green-form);
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -126,13 +126,13 @@ input {
 }
 
 .checkbox-input:checked + .checkbox-label .checkbox-icon {
-  background: #279e7a;
+  background: var(--green-form);
 }
 
 .checkbox-label .checkbox-icon {
   border-radius: 4px;
   border: 0;
-  background: #c4c4c4;
+  background: var(--light-grey);
 }
 
 .checkbox-label .checkbox-icon::after {
@@ -141,8 +141,8 @@ input {
   border-radius: 2px;
   background: 0 0;
   border: 2px solid transparent;
-  border-bottom-color: #fff;
-  border-left-color: #fff;
+  border-bottom-color: white;
+  border-left-color: white;
   transform: rotate(-55deg);
   left: 21%;
   top: 19%;
