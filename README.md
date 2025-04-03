@@ -44,8 +44,7 @@ Ressources:
 
 - webinaire [Utilisez JavaScript pour réaliser un site dynamique](https://app.livestorm.co/openclassrooms-1/utilisez-javascript-pour-realiser-un-site-dynamique/live?s=ce585089-cab6-4fe1-b9ee-86fa8a0880f8#/chat).
 
-- Livre Javascript - Philip Ackermann - Rheinwerk Computing  
-
+- Livre Javascript - Philip Ackermann - Rheinwerk Computing
 
 ## Remerciements
 
