@@ -96,18 +96,20 @@ async function sendMessage() {
     ? "https://chardonbleu.github.io/Game-On"
     : "http://127.0.0.1:5500";
 
-  fetch(apiUrl + "/index.html?" + searchParams.toString(), {
-    method: "GET",
-  })
-    .then((response) => response.text())
-    .then(() => {
-      form.reset();
-      form.classList.add("mask-node");
-      confirmation.classList.remove("mask-node");
-    })
-    .catch((error) => {
-      throw new Error("Erreur à l'envoi du message :", error);
-    });
+  try {
+    await fetch(
+      apiUrl + "/index.html?" + searchParams.toString(),
+      {
+        method: "GET",
+      },
+    );
+    form.reset();
+    form.classList.add("mask-node");
+    confirmation.classList.remove("mask-node");
+
+  } catch (error) {
+    throw new Error("Erreur à l'envoi du message :", error);
+  }
 }
 
 /** Check if form is valid before sending message
