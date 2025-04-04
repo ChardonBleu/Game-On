@@ -45,15 +45,15 @@ function displayErrorMessage(errorValidation, errorDiv) {
 /** Validate modal form for imputs of type text, email, date or number
  * @return {boolean} true if all those imputs are valid
  */
-function validateCommunInput() {
-  let validation = false;
+function validateCommonInput() {
+  let validation = true;
   const allErrors = document.querySelectorAll(".error");
 
   for (const error of allErrors) {
     const input = error.querySelector("input");
-    let inputValidation = input.checkValidity() && input.value;
+    let inputValidation = Boolean(input.checkValidity() && input.value);
     displayErrorMessage(inputValidation, error);
-    validation = validation || inputValidation;
+    validation = validation && inputValidation;
   }
   return validation;
 }
@@ -114,7 +114,7 @@ async function sendMessage() {
 export function validationForm(event) {
   event.preventDefault();
   if (
-    validateCommunInput() &&
+    validateCommonInput() &&
     validateRadioInput() &&
     validateCheckboxInput()
   ) {
