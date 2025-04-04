@@ -118,6 +118,6 @@ export function validationForm(event) {
     validateRadioInput() &&
     validateCheckboxInput()
   ) {
-    sendMessage(event);
+    sendMessage();
   }
 }
