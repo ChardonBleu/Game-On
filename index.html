@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>Reservation</title>
@@ -86,20 +86,21 @@
                   type="email"
                   id="email"
                   name="email"
-                  pattern="[a-z0-9._\-]+@[a-z0-9._\-]+\.[a-z0-9._\-]+"
+                  pattern="^[\w.\-]+@[\w.\-]+\.[a-z]{2,4}$"
                 >
               </div>
 
               <div
                 class="error"
-                data-error="Vous devez entrer votre date de naissance."
+                data-error="Vous devez entrer votre date de naissance (entre le 01/01/1900 et aujourd'hui)"
               >
                 <label for="birthdate">Date de naissance</label>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
-                  name="birthdate"
+                  name="birthdate",
+                  min="1900-01-01"
                 >
               </div>
 
