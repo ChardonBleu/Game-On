@@ -42,6 +42,21 @@ function displayErrorMessage(errorValidation, errorDiv) {
   }
 }
 
+
+/** Validate input vlue in modal form for imputs of type text, email, date or number
+ * And check for the date form that date is lower than today.
+ * @return {boolean} true if all those imputs are valid
+ */
+function checkCommunInput(input) {
+  let validity = true
+  if (input.name === "birthdate") {
+    const today = new Date()
+    const inputDate = new Date(input.value)
+    validity = inputDate <= today ? true : false;
+  }
+  return Boolean(input.value && input.checkValidity() && validity);
+}
+
 /** Validate modal form for imputs of type text, email, date or number
  * @return {boolean} true if all those imputs are valid
  */
@@ -51,7 +66,7 @@ function validateCommonInput() {
 
   for (const error of allErrors) {
     const input = error.querySelector("input");
-    let inputValidation = Boolean(input.checkValidity() && input.value);
+    let inputValidation = checkCommunInput(input)
     displayErrorMessage(inputValidation, error);
     validation = validation && inputValidation;
   }
@@ -113,10 +128,11 @@ async function sendMessage() {
  */
 export function validationForm(event) {
   event.preventDefault();
+  const validCommon = validateCommonInput()
+  const validRadio = validateRadioInput()
+  const validCheckbox = validateCheckboxInput()
   if (
-    validateCommonInput() &&
-    validateRadioInput() &&
-    validateCheckboxInput()
+    validCommon && validRadio && validCheckbox
   ) {
     sendMessage();
   }

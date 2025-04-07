@@ -61,14 +61,8 @@ input {
   opacity: 1;
 }
 
-.error input:invalid {
-  border: 2px solid var(--error-color);
-}
 
-.error input:valid {
-  border: 1px solid var(--green-form);
-}
-
+.error[data-error-visible="true"] input,
 .error-radio[data-error-visible="true"] .radio-icon,
 .error-checkbox[data-error-visible="true"] .conditions {
   border: 2px solid var(--error-color);
