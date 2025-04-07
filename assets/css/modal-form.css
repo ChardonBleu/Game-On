@@ -61,7 +61,6 @@ input {
   opacity: 1;
 }
 
-
 .error[data-error-visible="true"] input,
 .error-radio[data-error-visible="true"] .radio-icon,
 .error-checkbox[data-error-visible="true"] .conditions {
